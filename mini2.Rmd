@@ -41,5 +41,10 @@ glimpse(committees)
 glimpse(contributions)
 ```
 ```{r}
-
+x <- candidates %>%
+    inner_join(contributions,by = c("cand_id"="cand_id")) %>%
+    group_by(cand_name) %>%
+    summarise(income = sum(transaction_amt)) %>%
+    arrange(desc(income))
+x
 ```
