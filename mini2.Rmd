@@ -17,11 +17,22 @@ glimpse(house_elections)
 ```
 ```{r}
 glimpse(candidates)
+# the list of how many candidates in each party and sort it
 can <- candidates %>%
        group_by(cand_party_affiliation) %>%
        summarise(party = n())
 can <- arrange(can,desc(party))
 can
+
+# find how many candidates in that state
+number <- function(location){
+  candidates %>%
+  filter(cand_state == location) %>%
+  summarise(total = n())
+}
+
+# example1
+number(location = 'CA')
 ```
 ```{r}
 glimpse(committees)
