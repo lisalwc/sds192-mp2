@@ -11,14 +11,24 @@ load("contributions.rda")
 ```
 
 ```{r}
+library(dplyr)
+library(tidyverse)
 glimpse(house_elections)
 ```
 ```{r}
 glimpse(candidates)
+can <- candidates %>%
+       group_by(cand_party_affiliation) %>%
+       summarise(party = n())
+can <- arrange(can,desc(party))
+can
 ```
 ```{r}
 glimpse(committees)
 ```
 ```{r}
 glimpse(contributions)
+```
+```{r}
+
 ```
