@@ -41,6 +41,7 @@ glimpse(committees)
 glimpse(contributions)
 ```
 ```{r}
+#find income of each candidate
 x <- candidates %>%
     inner_join(contributions,by = c("cand_id"="cand_id")) %>%
     group_by(cand_name) %>%
