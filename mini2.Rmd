@@ -1,0 +1,24 @@
+---
+title: "mini2"
+output: html_document
+---
+
+```{r}
+load("house_elections.rda")
+load("candidates.rda")
+load("committees.rda")
+load("contributions.rda")
+```
+
+```{r}
+glimpse(house_elections)
+```
+```{r}
+glimpse(candidates)
+```
+```{r}
+glimpse(committees)
+```
+```{r}
+glimpse(contributions)
+```
